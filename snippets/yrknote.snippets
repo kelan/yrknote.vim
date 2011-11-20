@@ -1,0 +1,13 @@
+# ===========================================================================
+# File:        snippets/yrknote.vim
+# Description: My personal note-taking format
+# Maintainer:  Kelan Champagne  (http://yeahrightkeller.com)
+# License:     MIT
+# ===========================================================================
+
+# Divider with date
+snippet d---
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	${1:`strftime("%Y-%m-%d")`}
+	$2
+
