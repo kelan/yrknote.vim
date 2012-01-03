@@ -15,7 +15,7 @@ set textwidth=100
 set wrapmargin=0
 
 
-" List all sections
+" cmd-shift-L to List all sections in locationlist, and jump to one
 nmap <D-L> :lvimgrep /\C^[A-Z0-9][-_:A-Z 0-9]\+$/j %<CR>:lopen 15<CR>
 " Jump up/down by section
 nmap ]] /^[- ]\{10,}$<CR>:nohls<CR>
