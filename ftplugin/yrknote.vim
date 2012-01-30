@@ -49,3 +49,6 @@ set formatoptions+=n
 " don't auto break long lines if they were long when you start the insert
 set formatoptions+=l
 
+" For jumping to files
+nmap <C-]> :e <cword>.txt<CR>
+nmap <2-LeftMouse> :e <cword>.txt<CR>
