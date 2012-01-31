@@ -10,10 +10,13 @@ if (exists("b:did_ftplugin"))
 endif
 let b:did_ftplugin = 1
 
-" Don't do any automatic hard-wrapping
+" Text formatting
 set textwidth=100
+set colorcolumn=100
 set wrapmargin=0
 
+"
+" Commands
 
 " cmd-shift-L to List all sections in locationlist, and jump to one
 nmap <D-L> :lvimgrep /\C^[A-Z0-9][-_:A-Z 0-9]\+$/j %<CR>:lopen 15<CR>
@@ -37,18 +40,26 @@ noremap <buffer> A g$a
 " make more bullet characters (by making them comment chars)
 " from before
 " s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-set comments=nb:*,nb:-,nb:+,nb:?,nb:>
-" auto insert comment characters, in insert and normal mode
-set formatoptions+=ro
-" but don't auto-wrap text or comments
-set formatoptions-=tc
-" recognize numbered lists
-set formatoptions+=n
+" set comments=nb:*,nb:-,nb:+,nb:?,nb:>
+" " auto insert comment characters, in insert and normal mode
+" set formatoptions+=ro
+" " but don't auto-wrap text or comments
+" set formatoptions-=tc
+" " recognize numbered lists
+" set formatoptions+=n
+
+" from vim-markdown:
+set comments=fb:*,fb:-,fb:+,n:>
+set commentstring=>\ %s
+set formatoptions+=tcqln
+" ^ n: recognize numbered lists
+set formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^[-*+]\\s\\+
+
 
 " maybe want in all files:
 " don't auto break long lines if they were long when you start the insert
 set formatoptions+=l
 
 " For jumping to files
-nmap <C-]> :e <cword>.txt<CR>
-nmap <2-LeftMouse> :e <cword>.txt<CR>
+nmap <C-]>         :find <cfile>.txt<CR>
+

@@ -4,6 +4,44 @@ yrknote.vim
 This is my personal notes format.
 
 
+I keep all my notes in a single dir, each with CamelCase filenames
+ending in ".txt".  I edit them by opening up that dir in
+[MacVim](http://code.google.com/p/macvim/).  For jumping around, I
+primarily use [Command-T](https://github.com/wincent/Command-T).
+
+Features
+--------
+
+This bundle adds a few helpful things, such as:
+
+* Syntax highlighting for sections, lists, etc.
+* Snippets (using [SnipMate](https://github.com/garbas/vim-snipmate))
+* Some custom commands for navigation, formatting, etc.
+
+### Formatting
+
+My formatting is similar to [Markdown](), but has a few changes based on
+the way I worked before I knew about markdown.  Primarily, I have
+section dividers/titles that stand out a bit more (when there is no
+syntax highlightin), and a less-structured
+
+I divide major sections in files with dividers made of hyphens, and each
+section has a title that is all-caps as the first line past the divider.
+
+Sub-Sections are any lines that end with a colon (:).
+
+Lists start with a bullet character, which can be any one of *, +, -, ?
+* '*' is for normal bullet points.
+* '+' is of positive things (when I'm making a list of pros/cons) and
+  get highlighted as green.
+* '-' is for negative items, and get highlighted as red.
+* '?' is for questions.
+
+I nest lists by indenting sub-lists with 4 spaces.
+
+I put
+
+
 Installation
 ------------
 
