@@ -20,6 +20,8 @@ syn match yrkListBullet         "^\s*\* "
 syn match yrkListBulletPlus     "^\s*+ "
 syn match yrkListBulletMinus    "^\s*- "
 syn match yrkListBulletQuestion "^\s*? "
+syn match yrkListBulletTodo     "^\s*O "
+syn match yrkListBulletDone     "^\s*X "
 syn match yrkDivider            "^[- ]\{5,}$"
 
 syn match yrkBlockQuote         "\s*>.*$"
@@ -42,6 +44,8 @@ hi def link yrkListBullet           Identifier
 hi def link yrkListBulletPlus       Statement
 hi def link yrkListBulletMinus      Special
 hi def link yrkListBulletQuestion   Define
+hi def link yrkListBulletTodo       Todo
+hi def link yrkListBulletDone       Underlined
 hi def link yrkIndentedText         Constant
 
 hi def link yrkTechWord             Identifier

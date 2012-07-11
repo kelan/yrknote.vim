@@ -49,7 +49,7 @@ noremap <buffer> A g$a
 " set formatoptions+=n
 
 " from vim-markdown:
-set comments=fb:*,fb:-,fb:+,n:>
+set comments=fb:*,fb:-,fb:+,fb:?,fb:O,fb:X,n:>
 set commentstring=>\ %s
 set formatoptions+=tcqln
 " ^ n: recognize numbered lists
