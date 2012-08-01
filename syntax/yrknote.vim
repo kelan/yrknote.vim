@@ -24,10 +24,10 @@ syn match yrkListBulletTodo     "^\s*O "
 syn match yrkListBulletDone     "^\s*X "
 syn match yrkDivider            "^[- ]\{5,}$"
 
-syn match yrkBlockQuote         "\s*>.*$"
+syn match yrkBlockQuote         "^\s*>.*$"
 
 syn match yrkCodeInline         "`.\{-1,}`"
-syn match yrkCodeBlock          "\s*\$.*$"
+syn match yrkCodeBlock          "^\s*\$.*$"
 
 
 " sections start with a section header, and end with a divider
