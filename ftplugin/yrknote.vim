@@ -63,3 +63,36 @@ set formatoptions+=l
 " For jumping to files
 nmap <C-]>         :find <cfile>.txt<CR>
 
+" custom fold expression
+" from http://vimcasts.org/episodes/writing-a-custom-fold-expression/
+" It folds starting on the divider line (because I start most files
+" with that line), but titles it with the following line.  This makes it
+" also work with sections that don't have a title.
+function! YrknoteFolds()
+    let thisline = getline(v:lnum)
+    if match(thisline, '^[^-+*?].\+:$') >= 0
+        return ">2"
+    elseif match(thisline, '^[- ]\+$') >= 0
+        return ">1"
+    elseif match(thisline, '^[^-*+?XO].*:$') >= 0 || match(thisline, '^\s*$') >= 0
+        return "<2"
+    else
+        return "="
+    endif
+endfunction
+setlocal foldmethod=expr
+setlocal foldexpr=YrknoteFolds()
+function! YrknoteFoldText()
+    let foldsize = (v:foldend-v:foldstart)
+    if v:foldlevel >= 2
+        return getline(v:foldstart).' ('.foldsize.' lines)'
+    else
+        return getline(v:foldstart+1).' ('.foldsize.' lines)'
+    endif
+endfunction
+setlocal foldtext=YrknoteFoldText()
+set foldenable
+" start with folds expanded
+set foldcolumn=2
+set foldlevel=2
+
