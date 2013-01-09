@@ -12,7 +12,7 @@ endif
 syn match yrkTechWord           "\<[-_A-Za-z0-9]\{-1,}[-_A-Z]\{-1,}[-_A-Za-z0-9]\{-1,}\>"
 
 syn match yrkSectionHeader      "^[-A-Z _/0-9'"()?,.:;]\+$"
-syn match yrkSubSectionHeader   "^[-A-Za-z _0-9"'()?,.:;]\+:$"
+syn match yrkSubSectionHeader   "^[-A-Za-z _/0-9"'()?,.:;]\+:$"
 syn match yrkPrefix             "^\s*.\{-}:  "
 " syn match yrkPrefixSolo         "^\s*.\{-}:\w*$"
 syn match yrkIndentedText       "^\s\{4,}.*$"
